@@ -143,6 +143,19 @@
             margin-top: 350px;
         }
     </style>
+    <script src="https://cdn.onesignal.com/sdks/web/v16/OneSignalSDK.page.js" defer></script>
+<script>
+  window.OneSignalDeferred = window.OneSignalDeferred || [];
+  OneSignalDeferred.push(async function(OneSignal) {
+    await OneSignal.init({
+      appId: "08689e3a-c2ed-41ca-be6b-249b2f45456c",
+      safari_web_id: "web.onesignal.auto.0be2159b-fe04-48af-91ed-a963117d84ac",
+      notifyButton: {
+        enable: true,
+      },
+    });
+  });
+</script>
 </head>
 <body>
 
@@ -230,15 +243,7 @@
             });
         });
     </script>
-    <script src="https://cdn.onesignal.com/sdks/web/v16/OneSignalSDK.page.js" defer></script>
-<script>
-  window.OneSignalDeferred = window.OneSignalDeferred || [];
-  OneSignalDeferred.push(async function(OneSignal) {
-    await OneSignal.init({
-      appId: "08689e3a-c2ed-41ca-be6b-249b2f45456c",
-    });
-  });
-</script>
+    
 
 </body>
 </html>
