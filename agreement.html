@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agreement - Gloomy Widgets</title>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <style>
+        /* Basic Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        a{
+          cursor: default;
+        }
+        
+        
+        body {
+            background-color: #121212;
+            font-family: Arial, sans-serif;
+            color: #ddd;
+        }
+
+        /* Header */
+        header {
+            background: #333;
+            width: 100%;
+            text-align: center;
+            padding: 2rem 0;
+            position: relative;
+        }
+        header h1 {
+            font-size: 2.5rem;
+            color: #fff;
+        }
+
+        header a {
+            position: absolute;
+            top: 5px;
+            left: 1rem;
+            text-decoration: none;
+            color: #ddd;
+            font-size: 1.2rem;
+        }
+
+        header a:hover {
+            color: #fff;
+        }
+
+        /* Main Content */
+        main {
+            padding: 2rem;
+            width: 90%;
+            max-width: 800px;
+            margin: 3rem auto;
+            background: #333;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+        }
+
+        main h2 {
+            color: #fff;
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        main p {
+            font-size: 1rem;
+            line-height: 1.6;
+            margin-bottom: 1rem;
+            color: #ddd;
+        }
+
+        main ul {
+            margin: 1rem 0;
+            padding: 0 1.5rem;
+            list-style: disc;
+            color: #ddd;
+        }
+
+        main ul li {
+            margin-bottom: 0.5rem;
+        }
+
+        /* Buttons */
+        .buttons {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 2rem;
+        }
+
+        .buttons a {
+            background: #444;
+            color: #ddd;
+            text-decoration: none;
+            padding: 0.8rem 1.5rem;
+            border-radius: 5px;
+            font-size: 1rem;
+            transition: background 0.3s;
+        }
+
+        .buttons a:hover {
+            background: #555;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>User Agreement</h1>
+        <a href="index.html"><i class="fas fa-arrow-left"></i> Back to Home</a>
+    </header>
+
+    <main>
+        <h2>Terms and Conditions</h2>
+        <p>Welcome to Gloomy Widgets! Please read our terms and conditions carefully before making a purchase. By proceeding, you agree to comply with the following:</p>
+
+        <ul>
+            <li>You are responsible for ensuring the compatibility of widgets with your devices.</li>
+            <li>All purchases are final. Refunds are available only in case of defective products.</li>
+            <li>Your personal data will be used only for order processing and will not be shared.</li>
+            <li>Any misuse of our widgets is strictly prohibited and may result in legal action.</li>
+        </ul>
+
+        <p>If you agree to these terms, you can proceed with your purchase. Thank you for choosing Gloomy Widgets!</p>
+        
+        <p><i class="fas fa-money-bill-alt" aria-hidden="true"></i> This widget need to 55৳</p>
+
+        <div class="buttons">
+            <a href="purchase.html" id="agree-btn">I Agree</a>
+            <a href="index.html" id="disagree-btn">I Disagree</a>
+        </div>
+    </main>
+
+</body>
+</html>

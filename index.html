@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gloomy Widgets</title>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <style>
+        /* Basic Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            background-color: #121212;
+            font-family: Arial, sans-serif;
+            color: #ddd;
+        }
+        
+        a {
+          cursor: default;
+        }
+
+        /* Header */
+        header {
+            background: #333;
+            width: 100%;
+            text-align: center;
+            padding: 2rem 0;
+            position: relative;
+        }
+        header h1 {
+            font-size: 2.5rem;
+            color: #fff;
+        }
+
+        /* Three Dots Menu */
+        .menu-btn {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: none;
+            border: none;
+            font-size: 2rem;
+            color: #fff;
+           
+        }
+
+        /* Pop-up Menu */
+        .popup-menu {
+            position: fixed;
+            top: 0;
+            right: -200px;
+            background-color: #222;
+            width: 200px;
+            height: 100%;
+            box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.5);
+            transition: right 0.3s ease-in-out;
+            padding: 1rem;
+        }
+
+        .popup-menu.active {
+            right: 0;
+        }
+
+        .popup-menu .close-btn {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            font-size: 1.5rem;
+            color: #ddd;
+            background: none;
+            border: none;
+            
+        }
+
+        .popup-menu ul {
+            list-style: none;
+            margin-top: 3rem;
+            padding: 0;
+        }
+
+        .popup-menu ul li {
+            margin: 1.5rem 0;
+        }
+
+        .popup-menu ul li a {
+            color: #ddd;
+            text-decoration: none;
+            font-size: 1.2rem;
+        }
+
+        .popup-menu ul li a:hover {
+            color: #fff;
+        }
+
+        /* Sections */
+        section {
+            display: none; /* Hidden by default */
+            padding: 3rem 1rem;
+            margin: 2rem 0;
+            border-radius: 10px;
+            background-color: #333;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+            width: 90%;
+            max-width: 800px;
+            margin: 3rem auto;
+        }
+
+        section.active {
+            display: block; /* Show active section */
+        }
+
+        section h2 {
+            font-size: 2rem;
+            color: #fff;
+            margin-bottom: 1rem;
+        }
+
+        section p {
+            font-size: 1rem;
+            color: #ddd;
+        }
+
+        button {
+            background: #444;
+            color: #ddd;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+           
+            transition: background 0.3s;
+        }
+
+        footer {
+            background-color: #333;
+            color: #ddd;
+            padding: 1rem;
+            text-align: center;
+            margin-top: 350px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Gloomy Widgets</h1>
+        <button class="menu-btn"><i class="fas fa-ellipsis-v"></i></button>
+    </header>
+
+    <!-- Pop-up Menu -->
+    <div class="popup-menu" id="popupMenu">
+        <button class="close-btn"><i class="fas fa-times"></i></button>
+        <ul>
+            <li><a href="#home" data-section="home">Home</a></li>
+            <li><a href="#widgets" data-section="widgets">Widgets</a></li>
+            <li><a href="#contact" data-section="contact">Contact</a></li>
+            <li><a href="#purchase" data-section="purchase">Purchase</a></li>
+        </ul>
+    </div>
+
+    <!-- Sections -->
+    <section id="home" class="active"> <!-- Home is active by default -->
+        <h2>Welcome to Gloomy Widgets</h2>
+        <p>Discover the world of dark-themed widgets tailored for your needs.</p>
+        
+        
+    </section>
+
+    <section id="widgets">
+        <h2>Our Widgets</h2>
+        <p>Explore our collection of gloomy yet functional widgets.</p>
+     <a href="agreement.html">  <button>Buy Now</button>
+     </a> </section>
+
+    <section id="contact">
+        <h2>Contact Us</h2>
+        <p>Email: gloomy.widgets@example.com</p>
+        <p>Address:123 gloomy town,dark city</p>
+        <p>Phone: +123 456 7890</p>
+    </section>
+
+    <section id="purchase">
+        <h2>Purchase Now</h2>
+        <p>Order your favorite widget today and experience the gloomy vibe!</p><a href="agreement.html">
+        <button>Order Now</button></a>
+    </section>
+    
+    
+    <footer>
+        <p>&copy; 2024 Gloomy Widgets. All rights reserved.</p>
+    </footer>
+
+
+    <script>
+        // JS for the Menu
+        const menuBtn = document.querySelector('.menu-btn');
+        const closeBtn = document.querySelector('.close-btn');
+        const popupMenu = document.getElementById('popupMenu');
+        const sections = document.querySelectorAll('section');
+
+        // Open Menu
+        menuBtn.addEventListener('click', () => {
+            popupMenu.classList.add('active');
+        });
+
+        // Close Menu
+        closeBtn.addEventListener('click', () => {
+            popupMenu.classList.remove('active');
+        });
+
+        // Navigation Link Click
+        document.querySelectorAll('.popup-menu ul li a').forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault(); // Prevent default link behavior
+                const sectionId = link.getAttribute('href').substring(1); // Get the target section ID
+                const targetSection = document.getElementById(sectionId); // Find the section
+
+                // Hide all sections
+                sections.forEach(section => section.classList.remove('active'));
+
+                // Show the selected section
+                targetSection.classList.add('active');
+
+                // Close the menu
+                popupMenu.classList.remove('active');
+            });
+        });
+    </script>
+
+</body>
+</html>
